@@ -10,20 +10,23 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1857038,      30838]
-NotebookOptionsPosition[   1840165,      30494]
-NotebookOutlinePosition[   1853630,      30788]
-CellTagsIndexPosition[   1853587,      30785]
+NotebookDataLength[   1935867,      32330]
+NotebookOptionsPosition[   1918815,      31983]
+NotebookOutlinePosition[   1932280,      32277]
+CellTagsIndexPosition[   1932237,      32274]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Initialization strategies for Deep Neural Networks", "Title",
+Cell["\<\
+Exploring initialization strategies for Deep neural networks \
+\>", "Title",
  CellChangeTimes->{{3.700774153171832*^9, 3.700774159196458*^9}, {
   3.716902403353675*^9, 3.716902404538095*^9}, {3.739007870999908*^9, 
-  3.7390078847261944`*^9}},ExpressionUUID->"755e0098-9782-4df5-8299-\
+  3.7390078847261944`*^9}, {3.7390288790782447`*^9, 
+  3.7390288914052734`*^9}},ExpressionUUID->"755e0098-9782-4df5-8299-\
 7f54266c54d6"],
 
 Cell["\<\
@@ -1101,35 +1104,36 @@ activations of a neural network for a specific input. \
    3.739010982177639*^9}},ExpressionUUID->"0ed2d935-e8ff-4c05-9e95-\
 1dd6631482fc"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SeedRandom", "[", "21", "]"}], ";"}], "\n", 
  RowBox[{
   RowBox[{"dim", "=", "30"}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"net", "=", 
-   RowBox[{"NetChain", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
-       RowBox[{"LinearLayer", "[", "dim", "]"}]}], "}"}], ",", " ", 
-     RowBox[{"\"\<Input\>\"", "\[Rule]", " ", "100"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"net", "=", 
+  RowBox[{"NetChain", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}], ",", 
+      RowBox[{"LinearLayer", "[", "dim", "]"}]}], "}"}], ",", " ", 
+    RowBox[{"\"\<Input\>\"", "\[Rule]", " ", "100"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"inputvec", "=", 
    RowBox[{"RandomVariate", "[", 
@@ -1137,11 +1141,856 @@ Cell[BoxData[{
      RowBox[{"NormalDistribution", "[", "]"}], ",", " ", "100"}], "]"}]}], 
   ";"}]}], "Input",
  CellChangeTimes->{{3.739010984434603*^9, 3.7390110629469028`*^9}, {
-  3.7390111985062876`*^9, 3.7390112309555187`*^9}, {3.739011339687771*^9, 
-  3.739011351114217*^9}, {3.7390116064583263`*^9, 3.739011606910117*^9}, {
-  3.739015832935913*^9, 
-  3.7390158565490246`*^9}},ExpressionUUID->"d0012b6d-157c-4e3b-bbe9-\
+   3.7390111985062876`*^9, 3.7390112309555187`*^9}, {3.739011339687771*^9, 
+   3.739011351114217*^9}, {3.7390116064583263`*^9, 3.739011606910117*^9}, {
+   3.739015832935913*^9, 3.7390158565490246`*^9}, 
+   3.7390427876629443`*^9},ExpressionUUID->"d0012b6d-157c-4e3b-bbe9-\
 54364fa17e3f"],
+
+Cell[BoxData[
+ StyleBox[
+  TagBox[
+   TagBox[
+    RowBox[{"NetChain", 
+     RowBox[{"[", 
+      PanelBox[
+       DynamicModuleBox[{NeuralNetworks`Private`NetChain`assoc3 = Association[
+        "Type" -> "Chain", "Nodes" -> 
+         Association[
+          "1" -> Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 100}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               100, "$InputDimensions" -> {100}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{100}, NeuralNetworks`RealT]],
+              "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "2" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "3" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "4" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "5" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "6" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "7" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "8" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "9" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "10" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "11" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "12" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "13" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "14" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "15" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], "16" -> 
+           Association[
+            "Type" -> "Linear", "Arrays" -> 
+             Association[
+              "Weights" -> 
+               NeuralNetworks`TensorT[{30, 30}, NeuralNetworks`RealT], 
+               "Biases" -> NeuralNetworks`Nullable[
+                 NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+             "Parameters" -> 
+             Association[
+              "OutputDimensions" -> {30}, "$OutputSize" -> 30, "$InputSize" -> 
+               30, "$InputDimensions" -> {30}], "Inputs" -> 
+             Association[
+              "Input" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]], 
+             "Outputs" -> 
+             Association[
+              "Output" -> 
+               NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]]], 
+         "Edges" -> {
+          NeuralNetworks`NetPath["Nodes", "1", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Inputs", "Input"], 
+           NeuralNetworks`NetPath["Nodes", "2", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "1", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "3", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "2", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "4", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "3", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "5", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "4", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "6", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "5", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "7", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "6", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "8", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "7", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "9", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "8", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "10", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "9", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "11", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "10", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "12", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "11", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "13", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "12", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "14", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "13", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "15", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "14", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Nodes", "16", "Inputs", "Input"] -> 
+           NeuralNetworks`NetPath["Nodes", "15", "Outputs", "Output"], 
+           NeuralNetworks`NetPath["Outputs", "Output"] -> 
+           NeuralNetworks`NetPath["Nodes", "16", "Outputs", "Output"]}, 
+         "Inputs" -> 
+         Association[
+          "Input" -> NeuralNetworks`TensorT[{100}, NeuralNetworks`RealT]], 
+         "Outputs" -> 
+         Association[
+          "Output" -> NeuralNetworks`TensorT[{30}, NeuralNetworks`RealT]]], 
+        NeuralNetworks`Private`NetChain`opart, 
+        NeuralNetworks`Private`NetChain`part = Null, 
+        NeuralNetworks`Private`NetChain`selected = Null}, 
+        DynamicBox[GridBox[{{
+            NeuralNetworks`Private`NetChain`MouseClickBoxes[
+             TagBox[
+              GridBox[{{
+                 TagBox[
+                  TagBox[
+                  "\"\"", Annotation[#, {"Inputs", "Input"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                  "\"Input\"", Annotation[#, {"Inputs", "Input"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"100\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Inputs", "Input"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"1\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "1"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "1"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "1"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"2\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "2"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "2"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "2"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"3\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "3"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "3"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "3"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"4\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "4"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "4"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "4"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"5\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "5"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "5"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "5"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"6\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "6"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "6"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "6"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"7\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "7"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "7"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "7"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"8\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "8"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "8"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "8"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"9\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "9"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "9"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "9"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"10\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "10"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "10"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "10"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"11\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "11"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "11"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "11"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"12\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "12"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "12"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "12"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"13\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "13"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "13"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "13"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"14\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "14"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "14"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "14"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"15\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "15"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "15"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "15"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                   StyleBox["\"16\"", 
+                    GrayLevel[0.5], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "16"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   StyleBox["LinearLayer", 
+                    RGBColor[0.66, 0, 0], StripOnInput -> False], 
+                   Annotation[#, {"Nodes", "16"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Nodes", "16"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 TagBox[
+                  TagBox[
+                  "\"\"", Annotation[#, {"Outputs", "Output"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                  "\"Output\"", 
+                   Annotation[#, {"Outputs", "Output"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]], 
+                 TagBox[
+                  TagBox[
+                   TemplateBox[{"\"vector\"", "\" \"", 
+                    StyleBox[
+                    
+                    TemplateBox[{
+                    "\"(\"", "\"\[VeryThinSpace]\"", "\"size\"", "\":\"", 
+                    "\" \"", 
+                    
+                    TemplateBox[{"\[Times]", "\"\[Times]\"", "\"30\""}, 
+                    "RowWithSeparators"], "\"\[VeryThinSpace]\"", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], StripOnInput -> False]}, "RowDefault"], 
+                   Annotation[#, {"Outputs", "Output"}, "Mouse"]& ], 
+                  MouseAppearanceTag["LinkHand"]]}, {
+                 ItemBox[
+                  StyleBox["\"(uninitialized)\"", 
+                   RGBColor[0.66, 0, 0], Small, StripOnInput -> False], 
+                  Alignment -> Center, StripOnInput -> False], 
+                 "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {"Columns" -> {{1.1}}}], "Grid"], 
+             If[
+              ListQ[NeuralNetworks`Private`NetChain`part = MouseAnnotation[]],
+               If[NeuralNetworks`Private`NetChain`opart === 
+                NeuralNetworks`Private`NetChain`part, 
+                NeuralNetworks`Private`NetChain`selected = Null; 
+                NeuralNetworks`Private`NetChain`opart = Null, 
+                NeuralNetworks`Private`NetChain`selected = 
+                 Part[NeuralNetworks`Private`NetChain`assoc3, 
+                   Apply[Sequence, NeuralNetworks`Private`NetChain`part]]; 
+                NeuralNetworks`Private`NetChain`opart = 
+                 NeuralNetworks`Private`NetChain`part; Null]; Null]]}, 
+           NeuralNetworks`Private`NetChain`fmtSelected[
+           NeuralNetworks`Private`NetChain`selected, 
+            NeuralNetworks`Private`NetChain`part]}, 
+          GridBoxSpacings -> {"Columns" -> {{1}}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}}],
+         ImageSizeCache->{210., {166., 172.}},
+         TrackedSymbols:>{NeuralNetworks`Private`NetChain`selected}],
+        Initialization:>{NetChain}],
+       BaselinePosition->Automatic], "]"}]}],
+    False],
+   Deploy],
+  LineBreakWithin->False]], "Output",
+ CellChangeTimes->{
+  3.7390427902123194`*^9},ExpressionUUID->"5274d846-2c72-4edb-b880-\
+21e80af421b3"]
+}, Open  ]],
 
 Cell["\<\
 Let us initialize the network with the Identity strategy, drawing from a \
@@ -11667,7 +12516,7 @@ UlHGigsb8T/nf5DOTSE=
   DisplayFunction->Identity,
   FaceGrids->None,
   FaceGridsStyle->Automatic,
-  ImageSize->{333.04447168070374`, 151.93615626266885`},
+  ImageSize->{371.4363352024739, 218.915698019958},
   ImageSizeRaw->Automatic,
   Method->{"DefaultBoundaryStyle" -> Directive[
       GrayLevel[0.3]], "RotationControl" -> "Globe"},
@@ -11675,7 +12524,7 @@ UlHGigsb8T/nf5DOTSE=
     11.617153141702856`}, {0, 0.22484068825512052`}},
   PlotRangePadding->Scaled[0.02],
   Ticks->{Automatic, Automatic, Automatic},
-  ViewPoint->{0.6956069879953335, -3.279582409082316, 0.45877024782551806`},
+  ViewPoint->{2.3999788000839417`, -2.166347231290061, 0.9985196205531105},
   ViewVertical->{0., 0., 1.}]], "Output",
  CellChangeTimes->{{3.739011402760659*^9, 3.7390114230550675`*^9}, {
    3.7390114569897366`*^9, 3.739011481361232*^9}, {3.739011512789866*^9, 
@@ -18391,8 +19240,647 @@ PMpY0Z3umTvsDvoWfsHpLDJ/veG9RMwLn7DcyB9rlMlfWE5ZehYprekb/Ifx
   ViewPoint->{1.0075791050674359`, -3.135375059149742, 0.7773079090638835},
   ViewVertical->{0., 0., 1.}]], "Output",
  CellChangeTimes->{{3.7390157916502686`*^9, 
-  3.7390158647725153`*^9}},ExpressionUUID->"29cf37b8-6e32-4c4a-8dd1-\
-db38985ca6c5"]
+  3.7390158647725153`*^9}},ImageCache->GraphicsData["CompressedBitmap", "\<\
+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
+PnwtlP7ZsiEmZt+3ppIztS9NYR1G8scR7TWuIaaNZaKN60B07VVEEzsRTWbS
+TelKlM+toBslB/EIDURSzHu8GXyVHk0dfvVKGtBpr1ATtLHhD2ssw7O1qYsS
+hJZDUmrrwww3o5NRujaHwQzKWXriEcEOr62Sy9pWGjbjQiD+gjV9hJt8yNhW
+SvWgUkC04TDVf+6z/JQyCQSeGcqOKsxPy9HrTSy0DHXB0NhQt3bSXiFeMBw0
+3SE09YWm9Z0HBT3RrAGNLlkIKHpBuEZoaRpak6sUPVUaReNnQ9FGZzCe1R1L
+a4KlDNqQw9SmhPXAWB46w1lrLINcbw4cPLOWeQze5nBMBGdzQ5xFTISZdPFw
+dfWQmWS+cjyckMrXHeBrbSoswde6HA/r0mzm61zD1wXg6w3M11OGr7c0pOW3
+NaQVdzSklT9rSKvuOodW33MOrbm3Ea29j9v9jWjdA41o/5x6ER4bg4pqMCel
+cWdUkVwyfz1hTFOa376FFEBtbvkM+1SbW2IiDRx+SwqdyCV1dhn5IgqcWDgB
+DiMZRCJIoy4pnb/g7tRuRIU9OEr25NaLKdmbKcltZh9u2Rwxs33mZl8+Wt6l
+5JCOSvUBV+rRVqWBnfaJrS1kXttwGyly2nA7KDRnVpLXOmfmC7VXcCvOMTzl
+7cjujtKclhTLWiR8ZjUzeH3HcmzSy3suzMZqOhZvC0fZbmmirCt0pouylVKi
+LJvbk3Jxs0skNZlUKscDKg+Q5hlOOza7ZoNvRWF1n4lLldHG8zpWTw5PPEeC
+r3re8qHYe7JE/A3uS5Rm4uz80r3uuWf0uuWd1zXlTpNQss7zNi6xOCNN4ijc
+9iUcX6XhOGJ1qwitrdUdvsTaXKX06JWG0muCEDxhU01nb6dsN+F3N9N5L+hc
+R+g8w9B5NlvbOcfq0dwTHHqvr+/ovPhUA0dnhN8Vtzek4jvPYUqfQ6vuBqUb
+OUqvY0qvf7AxbXioMW18pDFteuRc2vTzc2nzo+fSgfn16ODC+iC6y0FvNXno
+rIuaKVGai1F+KFSpfUrCs1ZoX7IVWpjkHkrtv2Zj7kLnLT6Res+Fshjku+Em
+5bS0Hs+0ntBRfbAJx47Slsqzmcpz+nJ0ZYbOY4bOY3bO57ZgoMd0HBSrrS/N
+5o9MZxWY2p2jexf+2k6UzL5UyAc/PoC5jtVX4XUluLAmUj9KtdbgOtaWLJZL
+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
+bucJ7BFXNJK+9/mRW0584j9aYMd3\
+\>"],ExpressionUUID->"29cf37b8-6e32-4c4a-8dd1-db38985ca6c5"]
 }, Open  ]],
 
 Cell["\<\
@@ -18461,8 +19949,9 @@ Cell[BoxData[{
        RowBox[{"h", "[", 
         RowBox[{"[", "#", "]"}], "]"}]}], "}"}], "]"}], "&"}], "/@", 
    RowBox[{"Range", "[", "7", "]"}]}], "]"}]}], "Input",
- CellChangeTimes->{{3.7390116399818826`*^9, 
-  3.7390116407139144`*^9}},ExpressionUUID->"5b611300-4ab1-4c4a-8ad3-\
+ CellChangeTimes->{{3.7390116399818826`*^9, 3.7390116407139144`*^9}, {
+  3.7390436363859587`*^9, 
+  3.739043638142022*^9}},ExpressionUUID->"5b611300-4ab1-4c4a-8ad3-\
 c8db4e61d902"],
 
 Cell[BoxData[
@@ -30410,7 +31899,7 @@ hpkUHr/Xs/LsaJYzUs0eJN9aJqD1gLA3tXj8f5bgIzU=
     5.0799677774344385`}, {0, 0.3616148440827493}},
   PlotRangePadding->Scaled[0.02],
   Ticks->{Automatic, Automatic, Automatic},
-  ViewPoint->{0.08031311205842113, -3.2256170847013577`, 1.0192861359373826`},
+  ViewPoint->{0.08031311205842111, -3.2256170847013563`, 1.0192861359373822`},
   ViewVertical->{0., 0., 1.}]], "Output",
  CellChangeTimes->{
   3.739011642975864*^9, {3.7390158482731304`*^9, 
@@ -30788,57 +32277,60 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 290, 4, 218, "Title",ExpressionUUID->"755e0098-9782-4df5-8299-7f54266c54d6"],
-Cell[873, 28, 695, 12, 76, "Abstract",ExpressionUUID->"db4efd27-b72d-4835-a486-b18956bba0cb"],
-Cell[1571, 42, 574, 8, 48, "AuthorInfo",ExpressionUUID->"59a63784-4e95-46b9-9a1d-2c013f47161b"],
-Cell[2148, 52, 71, 0, 38, "Text",ExpressionUUID->"85271f44-5b04-421c-bf31-0395fab10c35"],
-Cell[2222, 54, 960, 16, 114, "Text",ExpressionUUID->"6f9347a9-d7c9-4b23-b858-7ea9913b6578"],
+Cell[580, 22, 362, 7, 153, "Title",ExpressionUUID->"755e0098-9782-4df5-8299-7f54266c54d6"],
+Cell[945, 31, 695, 12, 51, "Abstract",ExpressionUUID->"db4efd27-b72d-4835-a486-b18956bba0cb"],
+Cell[1643, 45, 574, 8, 48, "AuthorInfo",ExpressionUUID->"59a63784-4e95-46b9-9a1d-2c013f47161b"],
+Cell[2220, 55, 71, 0, 38, "Text",ExpressionUUID->"85271f44-5b04-421c-bf31-0395fab10c35"],
+Cell[2294, 57, 960, 16, 114, "Text",ExpressionUUID->"6f9347a9-d7c9-4b23-b858-7ea9913b6578"],
 Cell[CellGroupData[{
-Cell[3207, 74, 558, 9, 78, "Section",ExpressionUUID->"35feb7e4-4e93-4e64-abc0-7b0b86e8128f"],
-Cell[3768, 85, 1015, 16, 114, "Text",ExpressionUUID->"dc3fa30d-000e-45b8-9f6e-f2ffca697a75"],
-Cell[4786, 103, 996, 16, 89, "Text",ExpressionUUID->"77cf68d4-7a06-45c9-a084-7875d578822c"],
-Cell[5785, 121, 495, 9, 34, "CodeText",ExpressionUUID->"6047e34c-4783-4ed0-b0de-5328517365be"],
-Cell[6283, 132, 768, 15, 97, "Input",ExpressionUUID->"6a57f104-ade9-4e69-9c46-f4f2c59d53ab"],
+Cell[3279, 77, 558, 9, 78, "Section",ExpressionUUID->"35feb7e4-4e93-4e64-abc0-7b0b86e8128f"],
+Cell[3840, 88, 1015, 16, 114, "Text",ExpressionUUID->"dc3fa30d-000e-45b8-9f6e-f2ffca697a75"],
+Cell[4858, 106, 996, 16, 89, "Text",ExpressionUUID->"77cf68d4-7a06-45c9-a084-7875d578822c"],
+Cell[5857, 124, 495, 9, 34, "CodeText",ExpressionUUID->"6047e34c-4783-4ed0-b0de-5328517365be"],
+Cell[6355, 135, 768, 15, 97, "Input",ExpressionUUID->"6a57f104-ade9-4e69-9c46-f4f2c59d53ab"],
 Cell[CellGroupData[{
-Cell[7076, 151, 2273, 55, 141, "Input",ExpressionUUID->"65f8ce58-cd05-4043-9737-61e599347638"],
-Cell[9352, 208, 51257, 858, 274, "Output",ExpressionUUID->"d6128a54-e880-4188-bc87-54bcff45fae2"]
+Cell[7148, 154, 2273, 55, 141, "Input",ExpressionUUID->"65f8ce58-cd05-4043-9737-61e599347638"],
+Cell[9424, 211, 51257, 858, 274, "Output",ExpressionUUID->"d6128a54-e880-4188-bc87-54bcff45fae2"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60658, 1072, 473, 8, 78, "Section",ExpressionUUID->"69c2789e-757d-42de-8e7a-aa67a7c35b9d"],
-Cell[61134, 1082, 491, 8, 38, "Text",ExpressionUUID->"7de5c4c6-a64b-46a1-a690-20421acf8327"],
-Cell[61628, 1092, 498, 9, 38, "Text",ExpressionUUID->"0ed2d935-e8ff-4c05-9e95-1dd6631482fc"],
-Cell[62129, 1103, 1747, 40, 163, "Input",ExpressionUUID->"d0012b6d-157c-4e3b-bbe9-54364fa17e3f"],
-Cell[63879, 1145, 605, 10, 38, "Text",ExpressionUUID->"c3432452-ea41-4492-a132-15328674977f"],
+Cell[60730, 1075, 473, 8, 78, "Section",ExpressionUUID->"69c2789e-757d-42de-8e7a-aa67a7c35b9d"],
+Cell[61206, 1085, 491, 8, 38, "Text",ExpressionUUID->"7de5c4c6-a64b-46a1-a690-20421acf8327"],
+Cell[61700, 1095, 498, 9, 38, "Text",ExpressionUUID->"0ed2d935-e8ff-4c05-9e95-1dd6631482fc"],
 Cell[CellGroupData[{
-Cell[64509, 1159, 2347, 61, 119, "Input",ExpressionUUID->"8ef3ccf7-d1ac-4e92-8531-b3c5813c4b3c"],
-Cell[66859, 1222, 636005, 10462, 184, "Output",ExpressionUUID->"ce3f677a-53d4-492c-befa-2ea8b3e0a460"]
+Cell[62223, 1108, 1737, 39, 163, "Input",ExpressionUUID->"d0012b6d-157c-4e3b-bbe9-54364fa17e3f"],
+Cell[63963, 1149, 39505, 842, 382, "Output",ExpressionUUID->"5274d846-2c72-4edb-b880-21e80af421b3"]
 }, Open  ]],
-Cell[702879, 11687, 603, 10, 38, "Text",ExpressionUUID->"624187e1-0779-4cea-ac47-55980a038234"],
+Cell[103483, 1994, 605, 10, 38, "Text",ExpressionUUID->"c3432452-ea41-4492-a132-15328674977f"],
 Cell[CellGroupData[{
-Cell[703507, 11701, 2320, 60, 119, "Input",ExpressionUUID->"51df9e26-a345-43d2-8714-9b1f28127ce7"],
-Cell[705830, 11763, 402001, 6631, 239, "Output",ExpressionUUID->"29cf37b8-6e32-4c4a-8dd1-db38985ca6c5"]
+Cell[104113, 2008, 2347, 61, 119, "Input",ExpressionUUID->"8ef3ccf7-d1ac-4e92-8531-b3c5813c4b3c"],
+Cell[106463, 2071, 635999, 10462, 258, "Output",ExpressionUUID->"ce3f677a-53d4-492c-befa-2ea8b3e0a460"]
 }, Open  ]],
-Cell[1107846, 18397, 592, 10, 38, "Text",ExpressionUUID->"58ce0031-a847-4558-b23d-1aaaca00705b"],
+Cell[742477, 12536, 603, 10, 38, "Text",ExpressionUUID->"624187e1-0779-4cea-ac47-55980a038234"],
 Cell[CellGroupData[{
-Cell[1108463, 18411, 1971, 54, 119, "Input",ExpressionUUID->"5b611300-4ab1-4c4a-8ad3-c8db4e61d902"],
-Cell[1110437, 18467, 726876, 11950, 267, "Output",ExpressionUUID->"7b43c281-fb37-41a8-b4fb-a6302c57a0ee"]
+Cell[743105, 12550, 2320, 60, 119, "Input",ExpressionUUID->"51df9e26-a345-43d2-8714-9b1f28127ce7"],
+Cell[745428, 12612, 441002, 7270, 239, 401871, 6628, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"29cf37b8-6e32-4c4a-8dd1-db38985ca6c5"]
 }, Open  ]],
-Cell[1837328, 30420, 718, 12, 64, "Text",ExpressionUUID->"78d9c49b-f126-42a9-806f-7af0d1488c05"]
+Cell[1186445, 19885, 592, 10, 38, "Text",ExpressionUUID->"58ce0031-a847-4558-b23d-1aaaca00705b"],
+Cell[CellGroupData[{
+Cell[1187062, 19899, 2022, 55, 119, "Input",ExpressionUUID->"5b611300-4ab1-4c4a-8ad3-c8db4e61d902"],
+Cell[1189087, 19956, 726876, 11950, 267, "Output",ExpressionUUID->"7b43c281-fb37-41a8-b4fb-a6302c57a0ee"]
+}, Open  ]],
+Cell[1915978, 31909, 718, 12, 64, "Text",ExpressionUUID->"78d9c49b-f126-42a9-806f-7af0d1488c05"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1838083, 30437, 262, 4, 78, "Section",ExpressionUUID->"9da19663-7179-45c9-8160-ad35832309c2"],
-Cell[1838348, 30443, 568, 10, 64, "Text",ExpressionUUID->"45c45f6e-321c-4ce7-9657-950c1134d308"]
+Cell[1916733, 31926, 262, 4, 78, "Section",ExpressionUUID->"9da19663-7179-45c9-8160-ad35832309c2"],
+Cell[1916998, 31932, 568, 10, 64, "Text",ExpressionUUID->"45c45f6e-321c-4ce7-9657-950c1134d308"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1838953, 30458, 171, 3, 78, "Section",ExpressionUUID->"a78f6e4f-dbdf-4763-a44f-16569b36e665"],
-Cell[1839127, 30463, 215, 4, 38, "Text",ExpressionUUID->"44146aed-2d19-4c66-bfba-1e67f1c1dfb3"]
+Cell[1917603, 31947, 171, 3, 78, "Section",ExpressionUUID->"a78f6e4f-dbdf-4763-a44f-16569b36e665"],
+Cell[1917777, 31952, 215, 4, 38, "Text",ExpressionUUID->"44146aed-2d19-4c66-bfba-1e67f1c1dfb3"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1839391, 30473, 355, 7, 276, "Title",ExpressionUUID->"a91b0c22-4606-4122-bf19-3d4bcd746f4c"],
-Cell[1839749, 30482, 173, 3, 52, "Subsection",ExpressionUUID->"962879f3-9b11-4b56-8992-fa4001376df9"],
-Cell[1839925, 30487, 224, 4, 43, "Subsection",ExpressionUUID->"f46ef323-e1f9-43b8-b626-fa17b9c9a91b"]
+Cell[1918041, 31962, 355, 7, 276, "Title",ExpressionUUID->"a91b0c22-4606-4122-bf19-3d4bcd746f4c"],
+Cell[1918399, 31971, 173, 3, 52, "Subsection",ExpressionUUID->"962879f3-9b11-4b56-8992-fa4001376df9"],
+Cell[1918575, 31976, 224, 4, 43, "Subsection",ExpressionUUID->"f46ef323-e1f9-43b8-b626-fa17b9c9a91b"]
 }, Open  ]]
 }
 ]
