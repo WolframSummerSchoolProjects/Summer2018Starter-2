@@ -3295,7 +3295,7 @@ XsmfEPGgRBov3/YdlP8ps+pHiH35u1jIq+1/7pTWHRnzf+836qw=
 }, Open  ]]
 },
 WindowSize->{958, 1028},
-WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
 FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 7, 2018)",
 StyleDefinitions->"ReverseColor.nb"
 ]
