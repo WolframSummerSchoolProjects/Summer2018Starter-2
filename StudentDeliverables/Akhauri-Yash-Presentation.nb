@@ -11,12 +11,12 @@ WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["Last modified on: Tuesday, July 10, 2018 at 1:33", \
+Cell["Last modified on: Tuesday, July 10, 2018 at 2:33", \
 "TemplateInstructions",
  Deployed->True,
  Background->RGBColor[0.75, 0.75, 0.75],
  CellTags->
-  "LastModified",ExpressionUUID->"6e0ac1d5-fe48-4cbf-bf11-734b76d4c154"],
+  "LastModified",ExpressionUUID->"c3125d7f-368a-49a3-847a-590098902cdd"],
 
 Cell[CellGroupData[{
 
@@ -8894,12 +8894,12 @@ StyleDefinitions->Notebook[{
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
+ "LastModified"->{
+  Cell[400, 13, 225, 5, 51, "TemplateInstructions",ExpressionUUID->"c3125d7f-368a-49a3-847a-590098902cdd",
+   CellTags->"LastModified"]},
  "AuthorInfo"->{
   Cell[650, 22, 218, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"47541fce-e5a1-4793-b8e1-e1340b437ca6",
    CellTags->"AuthorInfo"]},
- "LastModified"->{
-  Cell[400, 13, 225, 5, 51, "TemplateInstructions",ExpressionUUID->"6e0ac1d5-fe48-4cbf-bf11-734b76d4c154",
-   CellTags->"LastModified"]},
  "PosterContent"->{
   Cell[1962, 62, 234, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"e3c11918-b62c-4e4f-bc19-a4aa32cba637",
    CellTags->"PosterContent"]},
@@ -8913,8 +8913,8 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"AuthorInfo", 412006, 8896},
- {"LastModified", 412163, 8899},
+ {"LastModified", 412008, 8896},
+ {"AuthorInfo", 412163, 8899},
  {"PosterContent", 412321, 8902},
  {"PresentationContent", 412489, 8905},
  {"ProjectNotes", 412660, 8908}
@@ -8922,7 +8922,7 @@ CellTagsIndex->{
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[400, 13, 225, 5, 51, "TemplateInstructions",ExpressionUUID->"6e0ac1d5-fe48-4cbf-bf11-734b76d4c154",
+Cell[400, 13, 225, 5, 51, "TemplateInstructions",ExpressionUUID->"c3125d7f-368a-49a3-847a-590098902cdd",
  CellTags->"LastModified"],
 Cell[CellGroupData[{
 Cell[650, 22, 218, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"47541fce-e5a1-4793-b8e1-e1340b437ca6",
