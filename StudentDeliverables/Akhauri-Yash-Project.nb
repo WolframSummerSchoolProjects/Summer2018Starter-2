@@ -3,20 +3,20 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    414777,       8957]
-NotebookOptionsPosition[    405646,       8781]
-NotebookOutlinePosition[    410737,       8898]
-CellTagsIndexPosition[    410522,       8889]
+NotebookDataLength[    415446,       8965]
+NotebookOptionsPosition[    406790,       8792]
+NotebookOutlinePosition[    411880,       8909]
+CellTagsIndexPosition[    411665,       8900]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["Last modified on: Tuesday, July 10, 2018 at 15:11", \
+Cell["Last modified on: Tuesday, July 10, 2018 at 19:07", \
 "TemplateInstructions",
  Deployed->True,
  Background->RGBColor[0.75, 0.75, 0.75],
  CellTags->
-  "LastModified",ExpressionUUID->"ef2a5c06-a7e8-4ec6-82aa-3ec72783e401"],
+  "LastModified",ExpressionUUID->"597e0501-e4ed-4d3d-a7ed-0c0603936722"],
 
 Cell[CellGroupData[{
 
@@ -4967,10 +4967,50 @@ Cell["Detailed Project Notes", "TemplateSectionHeaders",
  CellTags->
   "ProjectNotes",ExpressionUUID->"d0702cda-4649-4987-a5e2-607be4aa4f6e"],
 
+Cell[CellGroupData[{
+
 Cell["Main Results in Detail", "Subsubsection",
  CellChangeTimes->{
   3.7361820729365396`*^9},ExpressionUUID->"74d7f7f1-9f4f-482b-af6c-\
 0db6a54d8564"],
+
+Cell["\<\
+Deep neural networks are an important tool in modern applications. It has \
+become a major challenge to accelerate their training. As the complexity of \
+our training tasks increase, the computation does too. For sustainable \
+machine learning at scale, we need distributed systems that can leverage the \
+available hardware effectively. This research hopes to exceed the current \
+state of the art performance of neural networks by introducing a new \
+architecture optimized for distributability. The scope of this work is not \
+just limited to optimizing neural network training for large servers, but \
+also to bring training to heterogeneous environments; paving way for a \
+distributed peer to peer mesh computing platform that can harness the wasted \
+resources of idle computers in a workplace for AI.
+
+Advantages of Hadamard Binarization
+1. Faster convergence with respect to vanilla binarization techniques.
+2. Consistently about 10 times faster than CMMA algorithm.
+3. Angle of randomly initialized vectors preserved in high dimensional \
+spaces. (Approximately 37 degrees as vector length approach infinity.)
+4. Reduced communication times for distributed deep learning.
+5. Optimization of im2col algorithm for faster inference.
+6. Reduction of model sizes.
+
+The HBNN model gives 87% accuracy, whereas the BNN model (Binary Neural \
+Networks) give only 82%. These networks have only been trained for 5 epochs.
+Hadamard BNN preserves the distribution of the weights much better.
+Binarization approximately preserves the direction of high dimensional \
+vectors. The figure above demonstrates that the angle between a random vector \
+(from a standard normal distribution) and its binarized version converges to \
+~ 37 degrees as the dimension of the vector goes to infinity. This angle is \
+exceedingly small in high dimensions.\
+\>", "TemplateEditableContent",
+ ShowCellBracket->True,
+ CellMargins->{{65, 20}, {10, 10}},
+ CellChangeTimes->{{3.7402527161541524`*^9, 
+  3.7402527677152824`*^9}},ExpressionUUID->"b1c62b8c-32f6-4a2c-8b3e-\
+8f98c1a3b104"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -4999,11 +5039,6 @@ Cell["https://github.com/akhauriyash/Hadamard-Nets", "Item",
 8e93510df103"]
 }, Open  ]]
 }, Open  ]],
-
-Cell["Written Content / Lesson Plans", "Subsubsection",
- CellChangeTimes->{
-  3.736182124333714*^9},ExpressionUUID->"261f5bda-4958-45c6-8070-\
-5ef133f4851b"],
 
 Cell["Conclusions in Detail", "Subsubsection",
  CellChangeTimes->{
@@ -8752,31 +8787,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgKP8PHHU5dA==
  CellChangeTimes->{{3.736182157207601*^9, 3.736182158846121*^9}, {
   3.7402359353939157`*^9, 
   3.7402359670261087`*^9}},ExpressionUUID->"f529ac28-d6c0-475d-af8f-\
-f053901ce653"],
-
-Cell["Data Sources Links/References", "Subsubsection",
- CellChangeTimes->{
-  3.736182217183381*^9},ExpressionUUID->"7ed3f27b-24ef-4880-bb0e-\
-04a06fe0f486"],
-
-Cell["Future Directions", "Subsubsection",
- CellChangeTimes->{{3.7361822218287*^9, 
-  3.7361822234759083`*^9}},ExpressionUUID->"452ba8eb-e2b3-4a54-8454-\
-39ee7e3a256e"],
-
-Cell["Background Info Links/References", "Subsubsection",
- CellChangeTimes->{
-  3.736182238022826*^9},ExpressionUUID->"ad9933c3-7241-4aa8-b174-\
-58d80cbc28a9"],
-
-Cell["Keywords", "Subsubsection",
- CellChangeTimes->{
-  3.73618224410275*^9},ExpressionUUID->"95ddbe64-bd3a-4b4d-af53-988b3ffb00d3"],
-
-Cell["Other information", "Subsubsection",
- CellChangeTimes->{{3.7361822750600033`*^9, 
-  3.7361822822022877`*^9}},ExpressionUUID->"fe9ab745-362f-4e29-afc1-\
-d62227f1f62d"]
+f053901ce653"]
 }, Open  ]]
 },
 NotebookEventActions:>{
@@ -8795,7 +8806,7 @@ NotebookEventActions:>{
        "LastModified", Deployed -> True, Background -> 
        Lighter[Gray, 0.5]]]]},
 WindowSize->{812, 752},
-WindowMargins->{{104, Automatic}, {134, Automatic}},
+WindowMargins->{{Automatic, 368}, {Automatic, 69}},
 WindowFrameElements->{"CloseBox"},
 DockedCells->Cell[
  "Wolfram Summer School 2018", FontFamily -> "Source Sans Pro", FontSize -> 
@@ -8869,12 +8880,12 @@ StyleDefinitions->Notebook[{
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
+ "LastModified"->{
+  Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"597e0501-e4ed-4d3d-a7ed-0c0603936722",
+   CellTags->"LastModified"]},
  "AuthorInfo"->{
   Cell[651, 22, 218, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"47541fce-e5a1-4793-b8e1-e1340b437ca6",
    CellTags->"AuthorInfo"]},
- "LastModified"->{
-  Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"ef2a5c06-a7e8-4ec6-82aa-3ec72783e401",
-   CellTags->"LastModified"]},
  "PosterContent"->{
   Cell[1875, 59, 234, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"e3c11918-b62c-4e4f-bc19-a4aa32cba637",
    CellTags->"PosterContent"]},
@@ -8888,16 +8899,16 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"AuthorInfo", 409701, 8871},
- {"LastModified", 409858, 8874},
- {"PosterContent", 410016, 8877},
- {"PresentationContent", 410184, 8880},
- {"ProjectNotes", 410354, 8883}
+ {"LastModified", 410846, 8882},
+ {"AuthorInfo", 411001, 8885},
+ {"PosterContent", 411159, 8888},
+ {"PresentationContent", 411327, 8891},
+ {"ProjectNotes", 411497, 8894}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"ef2a5c06-a7e8-4ec6-82aa-3ec72783e401",
+Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"597e0501-e4ed-4d3d-a7ed-0c0603936722",
  CellTags->"LastModified"],
 Cell[CellGroupData[{
 Cell[651, 22, 218, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"47541fce-e5a1-4793-b8e1-e1340b437ca6",
@@ -8934,23 +8945,20 @@ Cell[232015, 4880, 3119, 76, 37, "TemplateDivider",ExpressionUUID->"01c4256e-42d
 Cell[CellGroupData[{
 Cell[235183, 4962, 231, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"d0702cda-4649-4987-a5e2-607be4aa4f6e",
  CellTags->"ProjectNotes"],
-Cell[235417, 4969, 151, 3, 44, "Subsubsection",ExpressionUUID->"74d7f7f1-9f4f-482b-af6c-0db6a54d8564"],
 Cell[CellGroupData[{
-Cell[235593, 4976, 131, 3, 36, "Subsubsection",ExpressionUUID->"3b9025ba-66d1-4cb7-a7e7-94fd8ccdbea9"],
-Cell[235727, 4981, 233, 4, 34, "Text",ExpressionUUID->"0e427111-3a9e-4cf8-807d-2300d4af6811"],
+Cell[235439, 4971, 151, 3, 44, "Subsubsection",ExpressionUUID->"74d7f7f1-9f4f-482b-af6c-0db6a54d8564"],
+Cell[235593, 4976, 2069, 35, 585, "TemplateEditableContent",ExpressionUUID->"b1c62b8c-32f6-4a2c-8b3e-8f98c1a3b104"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[235985, 4989, 217, 3, 31, "Item",ExpressionUUID->"02d56123-e33e-4049-aa72-e6ac89fc15cc"],
-Cell[236205, 4994, 239, 4, 31, "Item",ExpressionUUID->"0000129d-6a39-48b3-a2b0-8e93510df103"]
+Cell[237699, 5016, 131, 3, 44, "Subsubsection",ExpressionUUID->"3b9025ba-66d1-4cb7-a7e7-94fd8ccdbea9"],
+Cell[237833, 5021, 233, 4, 34, "Text",ExpressionUUID->"0e427111-3a9e-4cf8-807d-2300d4af6811"],
+Cell[CellGroupData[{
+Cell[238091, 5029, 217, 3, 31, "Item",ExpressionUUID->"02d56123-e33e-4049-aa72-e6ac89fc15cc"],
+Cell[238311, 5034, 239, 4, 31, "Item",ExpressionUUID->"0000129d-6a39-48b3-a2b0-8e93510df103"]
 }, Open  ]]
 }, Open  ]],
-Cell[236471, 5002, 157, 3, 44, "Subsubsection",ExpressionUUID->"261f5bda-4958-45c6-8070-5ef133f4851b"],
-Cell[236631, 5007, 148, 3, 36, "Subsubsection",ExpressionUUID->"d0b3000c-04d1-439a-b6c4-c7982b59ccbf"],
-Cell[236782, 5012, 168046, 3742, 810, "Subsubsection",ExpressionUUID->"f529ac28-d6c0-475d-af8f-f053901ce653"],
-Cell[404831, 8756, 156, 3, 36, "Subsubsection",ExpressionUUID->"7ed3f27b-24ef-4880-bb0e-04a06fe0f486"],
-Cell[404990, 8761, 168, 3, 36, "Subsubsection",ExpressionUUID->"452ba8eb-e2b3-4a54-8454-39ee7e3a256e"],
-Cell[405161, 8766, 159, 3, 36, "Subsubsection",ExpressionUUID->"ad9933c3-7241-4aa8-b174-58d80cbc28a9"],
-Cell[405323, 8771, 132, 2, 36, "Subsubsection",ExpressionUUID->"95ddbe64-bd3a-4b4d-af53-988b3ffb00d3"],
-Cell[405458, 8775, 172, 3, 36, "Subsubsection",ExpressionUUID->"fe9ab745-362f-4e29-afc1-d62227f1f62d"]
+Cell[238577, 5042, 148, 3, 44, "Subsubsection",ExpressionUUID->"d0b3000c-04d1-439a-b6c4-c7982b59ccbf"],
+Cell[238728, 5047, 168046, 3742, 810, "Subsubsection",ExpressionUUID->"f529ac28-d6c0-475d-af8f-f053901ce653"]
 }, Open  ]]
 }
 ]
