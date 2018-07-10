@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[     82982,       2012]
-NotebookOptionsPosition[     78303,       1941]
-NotebookOutlinePosition[     78680,       1957]
-CellTagsIndexPosition[     78637,       1954]
+NotebookDataLength[     87717,       2129]
+NotebookOptionsPosition[     82939,       2057]
+NotebookOutlinePosition[     83316,       2073]
+CellTagsIndexPosition[     83273,       2070]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1937,7 +1937,123 @@ Cell[BoxData["$Aborted"], "Output",
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.739734061781131*^9, 
   3.739734062683715*^9}},ExpressionUUID->"c60cadb4-2451-41ef-b435-\
-833acf0701b1"]
+833acf0701b1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", " ", "=", " ", 
+   RowBox[{"RandomVariate", "[", 
+    RowBox[{
+     RowBox[{"NormalDistribution", "[", "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hbWForward", "[", 
+    RowBox[{"x_", ",", " ", "hBL_"}], "]"}], " ", ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "row", ",", " ", "col", ",", "tempMat", ",", " ", "matCreate", ",", " ",
+        "joinerMat", ",", " ", "x2"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"x2", " ", "=", " ", "x"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"col", " ", "=", " ", "1"}], ",", " ", 
+        RowBox[{"col", " ", "\[LessEqual]", " ", 
+         RowBox[{
+          RowBox[{"Dimensions", "[", "x2", "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}], ",", " ", 
+        RowBox[{"col", "++"}], ",", 
+        RowBox[{
+         RowBox[{"matCreate", " ", "=", " ", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"ArrayReshape", "[", 
+            RowBox[{
+             RowBox[{"x2", "[", 
+              RowBox[{"[", 
+               RowBox[{";;", ",", " ", "col"}], "]"}], "]"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Ceiling", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"Dimensions", "[", "x2", "]"}], "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], "/", "hBL"}], "]"}], ",", 
+               "hBL"}], "}"}], ",", " ", "0"}], "]"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"tempMat", " ", "=", " ", 
+          RowBox[{"Map", "[", 
+           RowBox[{"Mean", ",", " ", 
+            RowBox[{"matCreate", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{";;", 
+                RowBox[{"-", "2"}]}], ",", " ", ";;"}], "]"}], "]"}], ",", 
+            " ", 
+            RowBox[{"{", "1", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Dimensions", "[", "x2", "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", " ", "hBL"}], "]"}], 
+            "\[NotEqual]", " ", "0"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"tempMat", ",", " ", 
+             RowBox[{
+              RowBox[{"Total", "[", 
+               RowBox[{"matCreate", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], ",", " ", ";;"}], "]"}], "]"}], "]"}], 
+              "/", 
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Dimensions", "[", "x2", "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], ",", " ", "hBL"}], "]"}]}]}],
+             "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"tempMat", ",", " ", 
+             RowBox[{"Mean", "[", 
+              RowBox[{"matCreate", "[", 
+               RowBox[{"[", 
+                RowBox[{
+                 RowBox[{"-", "1"}], ",", " ", ";;"}], "]"}], "]"}], "]"}]}], 
+            "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"row", " ", "=", " ", "1"}], ",", " ", 
+           RowBox[{"row", " ", "\[LessEqual]", " ", 
+            RowBox[{
+             RowBox[{"Dimensions", "[", "x2", "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", 
+           RowBox[{"row", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x2", "[", 
+              RowBox[{"[", 
+               RowBox[{"row", ",", " ", "col"}], "]"}], "]"}], " ", "=", " ", 
+             RowBox[{
+              RowBox[{"Sign", "[", 
+               RowBox[{"x2", "[", 
+                RowBox[{"[", 
+                 RowBox[{"row", ",", " ", "col"}], "]"}], "]"}], "]"}], "*", 
+              RowBox[{"tempMat", "[", 
+               RowBox[{"[", 
+                RowBox[{"Ceiling", "[", 
+                 RowBox[{"row", "/", "hBL"}], "]"}], "]"}], "]"}]}]}], 
+            ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "x2", "]"}]}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.740238309593739*^9, 
+  3.740238357368127*^9}},ExpressionUUID->"99920214-c94a-4cee-aaba-\
+e4da3f622110"]
 },
 WindowSize->{958, 1028},
 WindowMargins->{{Automatic, -7}, {Automatic, 0}},
@@ -2013,7 +2129,8 @@ Cell[CellGroupData[{
 Cell[77511, 1921, 385, 7, 26, "Input",ExpressionUUID->"cd9434f5-b8c6-4d57-a97b-3128168e77a5"],
 Cell[77899, 1930, 233, 3, 30, "Output",ExpressionUUID->"5c79c82a-7fc0-4e40-9a55-e3343eb2c06a"]
 }, Open  ]],
-Cell[78147, 1936, 152, 3, 26, "Input",ExpressionUUID->"c60cadb4-2451-41ef-b435-833acf0701b1"]
+Cell[78147, 1936, 152, 3, 26, "Input",ExpressionUUID->"c60cadb4-2451-41ef-b435-833acf0701b1"],
+Cell[78302, 1941, 4633, 114, 261, "Input",ExpressionUUID->"99920214-c94a-4cee-aaba-e4da3f622110"]
 }
 ]
 *)
