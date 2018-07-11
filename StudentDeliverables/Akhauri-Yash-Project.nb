@@ -3,20 +3,20 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    415446,       8965]
-NotebookOptionsPosition[    406790,       8792]
-NotebookOutlinePosition[    411880,       8909]
-CellTagsIndexPosition[    411665,       8900]
+NotebookDataLength[    415462,       8965]
+NotebookOptionsPosition[    406811,       8791]
+NotebookOutlinePosition[    411914,       8909]
+CellTagsIndexPosition[    411699,       8900]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["Last modified on: Tuesday, July 10, 2018 at 19:07", \
+Cell["Last modified on: Tuesday, July 10, 2018 at 21:25", \
 "TemplateInstructions",
  Deployed->True,
  Background->RGBColor[0.75, 0.75, 0.75],
  CellTags->
-  "LastModified",ExpressionUUID->"597e0501-e4ed-4d3d-a7ed-0c0603936722"],
+  "LastModified",ExpressionUUID->"5621b9ff-e1b3-40ce-a1bd-f11869603ba2"],
 
 Cell[CellGroupData[{
 
@@ -2473,7 +2473,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgKP8PHHU5dA==
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
    ImagePadding->{{All, 67.79505756601044}, {All, All}},
-   ImageSize->{315., 122.},
+   ImageSize->{584., 225.},
    LabelStyle->{FontFamily -> "Times"},
    Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
          (Exp[#]& )[
@@ -3232,7 +3232,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgKP8PHHU5dA==
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
    ImagePadding->{{All, 73.63067737906775}, {All, All}},
-   ImageSize->{325., 126.},
+   ImageSize->{592., 233.},
    LabelStyle->{FontFamily -> "Times"},
    Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
          (Exp[#]& )[
@@ -3290,7 +3290,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgKP8PHHU5dA==
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
    ImagePadding->All,
-   ImageSize->{256., Automatic},
+   ImageSize->{526., Automatic},
    Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
          (Exp[#]& )[
           Part[#, 1]], 
@@ -4986,30 +4986,29 @@ just limited to optimizing neural network training for large servers, but \
 also to bring training to heterogeneous environments; paving way for a \
 distributed peer to peer mesh computing platform that can harness the wasted \
 resources of idle computers in a workplace for AI.
-
-Advantages of Hadamard Binarization
+  
+  Advantages of Hadamard Binarization
 1. Faster convergence with respect to vanilla binarization techniques.
-2. Consistently about 10 times faster than CMMA algorithm.
-3. Angle of randomly initialized vectors preserved in high dimensional \
+  2. Consistently about 10 times faster than CMMA algorithm.
+  3. Angle of randomly initialized vectors preserved in high dimensional \
 spaces. (Approximately 37 degrees as vector length approach infinity.)
 4. Reduced communication times for distributed deep learning.
-5. Optimization of im2col algorithm for faster inference.
-6. Reduction of model sizes.
-
-The HBNN model gives 87% accuracy, whereas the BNN model (Binary Neural \
-Networks) give only 82%. These networks have only been trained for 5 epochs.
-Hadamard BNN preserves the distribution of the weights much better.
-Binarization approximately preserves the direction of high dimensional \
+  5. Optimization of im2col algorithm for faster inference.
+  6. Reduction of model sizes.
+  
+  The HBNN model gives 87 % accuracy, whereas the BNN model (Binary Neural \
+Networks) give only 82 %. These networks have only been trained for 5 epochs.
+  Hadamard BNN preserves the distribution of the weights much better.
+  Binarization approximately preserves the direction of high dimensional \
 vectors. The figure above demonstrates that the angle between a random vector \
 (from a standard normal distribution) and its binarized version converges to \
 ~ 37 degrees as the dimension of the vector goes to infinity. This angle is \
-exceedingly small in high dimensions.\
-\>", "TemplateEditableContent",
- ShowCellBracket->True,
- CellMargins->{{65, 20}, {10, 10}},
- CellChangeTimes->{{3.7402527161541524`*^9, 
-  3.7402527677152824`*^9}},ExpressionUUID->"b1c62b8c-32f6-4a2c-8b3e-\
-8f98c1a3b104"]
+exceedingly small in high dimensions. \
+\>", "Text",
+ CellChangeTimes->{{3.7402608914482107`*^9, 3.740260895828776*^9}, {
+   3.7402609312006044`*^9, 3.7402609465278587`*^9}, 
+   3.7402611100888033`*^9},ExpressionUUID->"92d9feec-dfaf-4eb2-b77b-\
+8a0c2df3c43c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8813,7 +8812,7 @@ DockedCells->Cell[
   42, FontVariations -> {"CapsType" -> "AllCaps"}, 
   RGBColor[0.25098039215686274`, 0.25098039215686274`, 0.25098039215686274`], 
   Background -> RGBColor[1., 0.807843137254902, 0.2549019607843137]],
-FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 7, 2018)",
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 16, 2017)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
@@ -8872,7 +8871,8 @@ StyleDefinitions->Notebook[{
     CellFrameMargins -> {{10, 10}, {1, 1}}, CellFrameColor -> 
     RGBColor[1, 0.5, 0], Background -> 
     RGBColor[1., 0.807843137254902, 0.2549019607843137]]}, Visible -> False, 
-  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 7, 2018)", 
+  FrontEndVersion -> 
+  "11.2 for Microsoft Windows (64-bit) (September 16, 2017)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
 ]
 (* End of Notebook Content *)
@@ -8881,7 +8881,7 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "LastModified"->{
-  Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"597e0501-e4ed-4d3d-a7ed-0c0603936722",
+  Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"5621b9ff-e1b3-40ce-a1bd-f11869603ba2",
    CellTags->"LastModified"]},
  "AuthorInfo"->{
   Cell[651, 22, 218, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"47541fce-e5a1-4793-b8e1-e1340b437ca6",
@@ -8899,16 +8899,16 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"LastModified", 410846, 8882},
- {"AuthorInfo", 411001, 8885},
- {"PosterContent", 411159, 8888},
- {"PresentationContent", 411327, 8891},
- {"ProjectNotes", 411497, 8894}
+ {"LastModified", 410880, 8882},
+ {"AuthorInfo", 411035, 8885},
+ {"PosterContent", 411193, 8888},
+ {"PresentationContent", 411361, 8891},
+ {"ProjectNotes", 411531, 8894}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"597e0501-e4ed-4d3d-a7ed-0c0603936722",
+Cell[400, 13, 226, 5, 51, "TemplateInstructions",ExpressionUUID->"5621b9ff-e1b3-40ce-a1bd-f11869603ba2",
  CellTags->"LastModified"],
 Cell[CellGroupData[{
 Cell[651, 22, 218, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"47541fce-e5a1-4793-b8e1-e1340b437ca6",
@@ -8936,7 +8936,7 @@ Cell[60118, 1076, 252, 6, 67, "TemplateSectionHeaders",ExpressionUUID->"8e028c0c
 Cell[60373, 1084, 1395, 29, 86, "TemplateInstructions",ExpressionUUID->"a415c0fc-f692-474a-a3a1-95fb4df9ef20"],
 Cell[CellGroupData[{
 Cell[61793, 1117, 212, 4, 44, "TemplateEditableHeader",ExpressionUUID->"a82eb68b-c55f-495d-ac5a-d97167784e73"],
-Cell[62008, 1123, 169902, 3752, 885, "TemplateEditableContent",ExpressionUUID->"c93624b0-8e9f-452c-9c74-674d9e990fed"],
+Cell[62008, 1123, 169902, 3752, 1392, "TemplateEditableContent",ExpressionUUID->"c93624b0-8e9f-452c-9c74-674d9e990fed"],
 Cell[231913, 4877, 99, 1, 19, "Input",ExpressionUUID->"5ddaca3b-16c4-4ddd-a510-a603177f7695",
  CellOpen->False],
 Cell[232015, 4880, 3119, 76, 37, "TemplateDivider",ExpressionUUID->"01c4256e-42d0-42b4-b6a6-4fa4583bf2f0"]
@@ -8947,18 +8947,18 @@ Cell[235183, 4962, 231, 5, 67, "TemplateSectionHeaders",ExpressionUUID->"d0702cd
  CellTags->"ProjectNotes"],
 Cell[CellGroupData[{
 Cell[235439, 4971, 151, 3, 44, "Subsubsection",ExpressionUUID->"74d7f7f1-9f4f-482b-af6c-0db6a54d8564"],
-Cell[235593, 4976, 2069, 35, 585, "TemplateEditableContent",ExpressionUUID->"b1c62b8c-32f6-4a2c-8b3e-8f98c1a3b104"]
+Cell[235593, 4976, 2090, 34, 562, "Text",ExpressionUUID->"92d9feec-dfaf-4eb2-b77b-8a0c2df3c43c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[237699, 5016, 131, 3, 44, "Subsubsection",ExpressionUUID->"3b9025ba-66d1-4cb7-a7e7-94fd8ccdbea9"],
-Cell[237833, 5021, 233, 4, 34, "Text",ExpressionUUID->"0e427111-3a9e-4cf8-807d-2300d4af6811"],
+Cell[237720, 5015, 131, 3, 44, "Subsubsection",ExpressionUUID->"3b9025ba-66d1-4cb7-a7e7-94fd8ccdbea9"],
+Cell[237854, 5020, 233, 4, 34, "Text",ExpressionUUID->"0e427111-3a9e-4cf8-807d-2300d4af6811"],
 Cell[CellGroupData[{
-Cell[238091, 5029, 217, 3, 31, "Item",ExpressionUUID->"02d56123-e33e-4049-aa72-e6ac89fc15cc"],
-Cell[238311, 5034, 239, 4, 31, "Item",ExpressionUUID->"0000129d-6a39-48b3-a2b0-8e93510df103"]
+Cell[238112, 5028, 217, 3, 31, "Item",ExpressionUUID->"02d56123-e33e-4049-aa72-e6ac89fc15cc"],
+Cell[238332, 5033, 239, 4, 31, "Item",ExpressionUUID->"0000129d-6a39-48b3-a2b0-8e93510df103"]
 }, Open  ]]
 }, Open  ]],
-Cell[238577, 5042, 148, 3, 44, "Subsubsection",ExpressionUUID->"d0b3000c-04d1-439a-b6c4-c7982b59ccbf"],
-Cell[238728, 5047, 168046, 3742, 810, "Subsubsection",ExpressionUUID->"f529ac28-d6c0-475d-af8f-f053901ce653"]
+Cell[238598, 5041, 148, 3, 44, "Subsubsection",ExpressionUUID->"d0b3000c-04d1-439a-b6c4-c7982b59ccbf"],
+Cell[238749, 5046, 168046, 3742, 810, "Subsubsection",ExpressionUUID->"f529ac28-d6c0-475d-af8f-f053901ce653"]
 }, Open  ]]
 }
 ]
